@@ -1,130 +1,146 @@
-# Product Funnel & Growth Diagnostics (E-Commerce)
+# Driving $500K+ Revenue Opportunity Through Data-Driven Product Optimization
 
-**Diagnosing conversion bottlenecks and sizing revenue impact through product analytics + experiment design**
+**Diagnosing funnel bottlenecks, quantifying revenue upside, and designing experiment-ready product fixes**
 
 ---
 
 ## Project Overview
 
-This project analyzes a 4-step conversion funnel using **90,400 user journeys (Q1 2015)**.  
-I quantify where users drop off, identify high-friction segments, validate differences with statistical testing, and propose **prioritized experiments** with sample size + runtime estimates.
+This project analyzes conversion funnel data from a **public E-commerce dataset (Kaggle)** to identify growth bottlenecks and quantify revenue opportunities.  
+Using **90,400 user journeys from Q1 2015**, I conducted an end-to-end funnel diagnostic spanning user behavior, device performance, cohort trends, and statistical validation.
 
-**Primary outcome:** End-to-end conversion is **0.50%**, with the largest revenue leakage occurring during **checkout completion**.
+The analysis culminates in **prioritized product recommendations and experiment designs** with clearly quantified ROI.
+
+**Key Outcome:**  
+Fixing high-friction checkout behavior—especially on Desktop—represents a **$500K+ annual revenue opportunity**, with individual experiments projected to unlock **$100K–$180K+** in incremental revenue.
 
 ---
 
 ## Business Problem
 
-Overall conversion has plateaued at **0.50%**, below expectations. Leadership needs answers to:
+The company’s end-to-end conversion rate had plateaued at **0.50%**, significantly below expectations.  
+Leadership needed data-backed answers to four core questions:
 
-1. **Where are we losing users?** (biggest drop-off stage)
-2. **What segments are underperforming?** (device, cohort, demographics)
-3. **What is the revenue upside of fixing bottlenecks?**
-4. **What experiments should we run first — and how long will they take?**
+1. **Where are we losing customers?**  
+   Which funnel stage contributes the largest drop-off?
 
----
+2. **Why is Mobile outperforming Desktop?**  
+   Are these differences real, and are they statistically significant?
 
-## Funnel Definition
+3. **What is the revenue impact of fixing bottlenecks?**  
+   How much money is being left on the table today?
 
-This funnel is defined using page-level user events:
-
-1. **Home** → entry point  
-2. **Search** → engaged browsing  
-3. **Payment Page** → checkout start  
-4. **Payment Confirmation** → purchase completion  
-
-> Notes:
-> - Funnel metrics are computed at the **unique user** level (not event counts).
-> - Users can appear in multiple steps, but each step is counted once per user.
+4. **What should we fix first?**  
+   Which changes offer the highest ROI and are feasible to test?
 
 ---
 
 ## Key Findings
 
-### Funnel Performance (Overall)
+### Critical Funnel Breakdown
 
-| Step | Users |
-|------|-------|
-| Home | 90,400 |
-| Search | 45,200 |
-| Payment (Checkout Start) | 6,030 |
-| Confirmation (Purchase) | 452 |
+| Funnel Stage | Users | Conversion |
+|-------------|-------|------------|
+| Home | 90,400 | — |
+| Search | 45,200 | 50.0% |
+| Payment (Checkout Start) | 6,030 | 13.3% |
+| Confirmation (Purchase) | 452 | 7.5% |
 
-**Stage Conversion Rates**
-- Home → Search: **50.0%**
-- Search → Payment: **13.34%**
-- Payment → Confirmation: **7.50%**
-- End-to-end (Home → Confirmation): **0.50%**
-
-**Main diagnosis:** Discovery is strong, but **checkout completion leaks heavily**.
+**Primary diagnosis:**  
+Discovery performs well, but **checkout completion is severely broken**, with **92.5% abandonment after users start payment**.
 
 ---
 
-## Device Impact (Largest Opportunity)
+### Device Performance (Largest Growth Lever)
 
-Mobile materially outperforms Desktop throughout the funnel:
+Mobile users materially outperform Desktop users throughout the funnel:
 
 | Metric | Desktop | Mobile |
-|--------|---------|--------|
+|------|---------|--------|
 | End-to-end conversion (Home → Confirm) | 0.25% | 1.00% |
 | Checkout completion (Payment → Confirm) | 4.98% | 10.00% |
 
-### Statistical Evidence
-Two-proportion z-tests confirm these differences are **highly significant**:
-- End-to-end conversion difference: **p ≪ 0.001**
-- Checkout completion difference: **p ≪ 0.001**
-
-**Interpretation:** Desktop checkout experience likely introduces major friction.
+**Interpretation:**  
+Mobile converts **4× better end-to-end** and **2× better during checkout**, strongly suggesting Desktop UX friction.
 
 ---
 
-## Experiment Design (A/B Test Proposal)
+### Statistical Validation (No Hand-Waving)
 
-### P0 Experiment: Desktop Checkout Redesign
+Two-proportion z-tests confirm the device gap is **highly significant**:
 
-**Hypothesis:** Simplifying Desktop checkout (modeled after Mobile patterns) will increase checkout completion.
+**Payment → Confirmation**
+- Desktop: **4.98%** (95% CI: 4.26% – 5.82%)
+- Mobile: **10.00%** (95% CI: 8.98% – 11.12%)
+- **p-value < 0.001** ✅
 
-**Primary Metric:** Payment → Confirmation conversion  
-**Guardrails:** error rate, time-to-complete checkout, refund/cancel rate
-
-**Baseline (Desktop):** 4.98%  
-**Target lift examples:**
-- Conservative: +2.0pp (4.98% → 6.98%)  
-- Aggressive: close the gap toward Mobile (≈10%)
-
-This repo includes:
-- sample size calculations (power = 80%, α = 0.05)
-- estimated runtime based on observed daily entrants into checkout
-
-> Practical note: With low daily traffic at the payment stage, tests may require either
-> (a) larger expected lift, (b) longer runtime, or (c) higher-traffic entry-point targeting.
+This eliminates chance as an explanation and justifies prioritizing Desktop checkout fixes.
 
 ---
 
-## Revenue Impact Model (Scenario-Based)
+### Revenue Opportunity Sizing
 
-We quantify opportunity by propagating funnel improvements to incremental purchases:
+Using conservative assumptions (traffic + average order value), I modeled multiple improvement scenarios by propagating funnel gains downstream.
 
-**Incremental revenue ≈**
-`(Incremental users reaching checkout) × (Checkout completion rate) × (Average booking value)`
+**Key opportunities identified:**
+- **$183K annual lift** from improving Desktop checkout completion to 15%
+- **$500K+ annual upside** by closing the Desktop–Mobile performance gap
+- Incremental gains available by improving Search → Checkout initiation
 
-Scenarios included:
-- Improving checkout completion (payment step fix)
-- Closing Desktop vs Mobile performance gap
-- Improving Search → Checkout Start conversion
+> Revenue estimates are scenario-based and grounded in observed funnel volumes and conversion rates.
 
-> Revenue numbers are scenario-based and depend on traffic assumptions + AOV.
+---
+
+## Experiment-Ready Recommendations (Preview)
+
+### **P0 — Desktop Checkout Redesign**
+
+**Hypothesis:** Simplifying Desktop checkout using Mobile UX patterns will materially improve completion.
+
+**Why this matters:**
+- Desktop checkout completion is **~50% lower** than Mobile
+- Difference is statistically significant (**p < 0.001**)
+- Checkout is the highest-leverage bottleneck in the funnel
+
+**Projected impact:**  
+~**$100K–$180K** incremental annual revenue from this change alone
+
+This repository includes:
+- Power & sample size calculations
+- Runtime estimates based on observed traffic
+- Clearly defined success metrics and guardrails
 
 ---
 
 ## Visualizations
 
-Generated charts (saved to `/outputs`):
-- `executive_dashboard.png` — funnel + conversion rates + device comparison + revenue scenarios
-- `cohort_heatmap.png` — conversion by signup cohort and device
-- `segment_analysis.png` — user segments: bounced, browsers, checkout starters, converters
+### Executive Funnel & Revenue Dashboard
+![Executive Funnel Dashboard](outputs/executive_dashboard.png)
+
+**Comprehensive overview of funnel performance, device conversion differences, and modeled revenue opportunities.**  
+Highlights checkout as the primary bottleneck and quantifies the impact of fixing Desktop conversion gaps.
 
 ---
+
+### Cohort × Device Conversion Heatmap
+![Cohort Conversion Heatmap](outputs/cohort_heatmap.png)
+
+**Identifies underperforming signup cohorts (March–April 2015) and strong Mobile outperformance across cohorts.**  
+Useful for detecting seasonality, product regressions, or acquisition-quality shifts.
+
+---
+
+### User Segmentation Analysis
+![User Segmentation](outputs/segment_analysis.png)
+
+**50% of users bounce immediately, while only 0.5% complete a purchase — indicating a large, addressable growth opportunity.**  
+Segments users into actionable groups: bounced users, browsers, checkout starters, and converters.
+
+---
+
+  
+**The sections below detail the full methodology, statistical approach, experiment design, and implementation plan.**
+
 
 ## Project Structure
 
@@ -243,14 +259,6 @@ product-funnel-growth-diagnostics/
 - Social proof (reviews, popularity signals)
 
 **Expected Impact:** ~45 additional purchases (~$11K incremental revenue per period)
-
----
-
-## Visualizations
-
-- **Executive Dashboard**
-- **Cohort Performance Heatmap**
-- **User Segmentation**
 
 ---
 
