@@ -6,13 +6,12 @@
 
 ## Project Overview
 
-This project analyzes conversion funnel data from a **public E-commerce dataset (Kaggle)** to identify growth bottlenecks and quantify revenue opportunities.  
-Using **90,400 user journeys from Q1 2015**, I conducted an end-to-end funnel diagnostic spanning user behavior, device performance, cohort trends, and statistical validation.
+This project analyzes conversion funnel data from a **public E-commerce dataset (Kaggle)** to identify growth bottlenecks and quantify revenue opportunities. Using **90,400 user journeys from Q1 2015**, I conducted an end-to-end funnel diagnostic spanning user behavior, device performance, cohort trends, and statistical validation.
 
 The analysis culminates in **prioritized product recommendations and experiment designs** with clearly quantified ROI.
 
 **Key Outcome:**  
-Fixing high-friction checkout behavior—especially on Desktop—represents a **$500K+ annual revenue opportunity**, with individual experiments projected to unlock **$100K–$180K+** in incremental revenue.
+Fixing high-friction checkout behavior especially on Desktop represents a **$500K+ annual revenue opportunity**, with individual experiments projected to unlock **$100K-$180K+** in incremental revenue.
 
 ---
 
@@ -41,7 +40,7 @@ Leadership needed data-backed answers to four core questions:
 
 | Funnel Stage | Users | Conversion |
 |-------------|-------|------------|
-| Home | 90,400 | — |
+| Home | 90,400 | - |
 | Search | 45,200 | 50.0% |
 | Payment (Checkout Start) | 6,030 | 13.3% |
 | Confirmation (Purchase) | 452 | 7.5% |
@@ -70,9 +69,9 @@ Mobile converts **4× better end-to-end** and **2× better during checkout**, st
 Two-proportion z-tests confirm the device gap is **highly significant**:
 
 **Payment → Confirmation**
-- Desktop: **4.98%** (95% CI: 4.26% – 5.82%)
-- Mobile: **10.00%** (95% CI: 8.98% – 11.12%)
-- **p-value < 0.001** ✅
+- Desktop: **4.98%** (95% CI: 4.26% - 5.82%)
+- Mobile: **10.00%** (95% CI: 8.98% - 11.12%)
+- **p-value < 0.001**
 
 This eliminates chance as an explanation and justifies prioritizing Desktop checkout fixes.
 
@@ -84,7 +83,7 @@ Using conservative assumptions (traffic + average order value), I modeled multip
 
 **Key opportunities identified:**
 - **$183K annual lift** from improving Desktop checkout completion to 15%
-- **$500K+ annual upside** by closing the Desktop–Mobile performance gap
+- **$500K+ annual upside** by closing the Desktop-Mobile performance gap
 - Incremental gains available by improving Search → Checkout initiation
 
 > Revenue estimates are scenario-based and grounded in observed funnel volumes and conversion rates.
@@ -93,7 +92,7 @@ Using conservative assumptions (traffic + average order value), I modeled multip
 
 ## Experiment-Ready Recommendations (Preview)
 
-### **P0 — Desktop Checkout Redesign**
+### **P0 - Desktop Checkout Redesign**
 
 **Hypothesis:** Simplifying Desktop checkout using Mobile UX patterns will materially improve completion.
 
@@ -103,7 +102,7 @@ Using conservative assumptions (traffic + average order value), I modeled multip
 - Checkout is the highest-leverage bottleneck in the funnel
 
 **Projected impact:**  
-~**$100K–$180K** incremental annual revenue from this change alone
+~**$100K-$180K** incremental annual revenue from this change alone
 
 This repository includes:
 - Power & sample size calculations
@@ -125,7 +124,7 @@ Highlights checkout as the primary bottleneck and quantifies the impact of fixin
 ### Cohort × Device Conversion Heatmap
 ![Cohort Conversion Heatmap](outputs/cohort_heatmap.png)
 
-**Identifies underperforming signup cohorts (March–April 2015) and strong Mobile outperformance across cohorts.**  
+**Identifies underperforming signup cohorts (March-April 2015) and strong Mobile outperformance across cohorts.**  
 Useful for detecting seasonality, product regressions, or acquisition-quality shifts.
 
 ---
@@ -133,7 +132,7 @@ Useful for detecting seasonality, product regressions, or acquisition-quality sh
 ### User Segmentation Analysis
 ![User Segmentation](outputs/segment_analysis.png)
 
-**50% of users bounce immediately, while only 0.5% complete a purchase — indicating a large, addressable growth opportunity.**  
+**50% of users bounce immediately, while only 0.5% complete a purchase indicating a large, addressable growth opportunity.**  
 Segments users into actionable groups: bounced users, browsers, checkout starters, and converters.
 
 ---
@@ -193,10 +192,10 @@ product-funnel-growth-diagnostics/
 - Calculated stage-level user counts and conversion rates
 - Quantified drop-offs at each transition
 - Defined practical behavioral segments:
-  - **Bounced** — home only  
-  - **Browsers** — searched but didn’t start checkout  
-  - **Checkout Starters** — reached payment page but didn’t convert  
-  - **Converters** — completed purchase  
+  - **Bounced** - home only  
+  - **Browsers** - searched but didn’t start checkout  
+  - **Checkout Starters** - reached payment page but didn’t convert  
+  - **Converters** - completed purchase  
 
 ---
 
@@ -224,7 +223,7 @@ product-funnel-growth-diagnostics/
 
 ## Key Recommendations
 
-### **P0 — Desktop Checkout Redesign**
+### **P0 - Desktop Checkout Redesign**
 **Rationale:** Mobile checkout completion is ~2× higher than Desktop (**p < 0.001**)
 
 **Proposed Changes**
@@ -233,24 +232,24 @@ product-funnel-growth-diagnostics/
 - Apple Pay / Google Pay / PayPal
 - Guest checkout option
 
-**Expected Impact:** ~$100K–$180K incremental annual revenue  
-**Estimated Test Duration:** ~5–6 weeks
+**Expected Impact:** ~$100K-$180K incremental annual revenue  
+**Estimated Test Duration:** ~5-6 weeks
 
 ---
 
-### **P0 — Checkout Abandonment Investigation**
+### **P0 - Checkout Abandonment Investigation**
 **Rationale:** 92.5% abandonment at checkout is unusually high
 
 **Actions**
 - Add checkout error & latency instrumentation
 - Session replay analysis
-- 10–15 targeted user interviews
+- 10-15 targeted user interviews
 
-**Expected Impact:** 1.5×–2× improvement in checkout completion
+**Expected Impact:** 1.5×-2× improvement in checkout completion
 
 ---
 
-### **P1 — Improve Search → Checkout Start Conversion**
+### **P1 - Improve Search → Checkout Start Conversion**
 **Rationale:** 86.7% of searchers never begin checkout
 
 **Tests**
