@@ -257,8 +257,7 @@ product-funnel-growth-diagnostics/
 - Price transparency
 - Social proof (reviews, popularity signals)
 
-**Expected Impact:**  
-~45 additional purchases (**~$11K incremental revenue per period**)
+**Expected Impact:**  ~45 additional purchases (which is almost $11K incremental revenue per period)
 
 
 ## Technical Highlights
