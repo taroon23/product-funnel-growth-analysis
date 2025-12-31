@@ -247,7 +247,7 @@ product-funnel-growth-diagnostics/
 
 **Expected Impact:** 1.5×-2× improvement in checkout completion
 
-### **P1 — Improve Search → Checkout Start Conversion**
+### **P1 - Improve Search → Checkout Start Conversion**
 
 **Rationale:**  
 86.7% of searchers never begin checkout.
