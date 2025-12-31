@@ -247,19 +247,19 @@ product-funnel-growth-diagnostics/
 
 **Expected Impact:** 1.5×-2× improvement in checkout completion
 
----
+### **P1 — Improve Search → Checkout Start Conversion**
 
-### **P1 - Improve Search → Checkout Start Conversion**
-**Rationale:** 86.7% of searchers never begin checkout
+**Rationale:**  
+86.7% of searchers never begin checkout.
 
-**Tests**
+**Tests:**
 - Improved ranking & filters
 - Price transparency
 - Social proof (reviews, popularity signals)
 
-**Expected Impact:** ~45 additional purchases (~$11K incremental revenue per period)
+**Expected Impact:**  
+~45 additional purchases (**~$11K incremental revenue per period**)
 
----
 
 ## Technical Highlights
 
